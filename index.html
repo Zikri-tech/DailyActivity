@@ -1,0 +1,184 @@
+<!doctype html>
+<!-- FILE: index.html | Halaman Login -->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DailyFlow — Masuk</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>"
+    />
+    <link rel="stylesheet" href="css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Animated Background -->
+    <div class="bg-gradient"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Main Wrapper -->
+    <div class="login-wrapper">
+      <!-- LEFT: Form Panel -->
+      <div class="login-left">
+        <!-- Brand -->
+        <div class="brand-wrap">
+          <div class="brand-logo">
+            <div class="brand-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <span class="brand-name-text">DailyFlow</span>
+          </div>
+          <p class="brand-tagline">
+            Aktivitas harian yang lebih produktif & teratur
+          </p>
+        </div>
+
+        <!-- Form -->
+        <h2 class="form-title">Selamat Datang! 👋</h2>
+        <p class="form-subtitle">Masuk untuk melanjutkan aktivitas harianmu.</p>
+
+        <!-- Error Message -->
+        <div class="error-msg" id="errorMsg">
+          <i class="fas fa-exclamation-circle"></i>
+          <span id="errorText">Username atau password salah!</span>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <!-- Username -->
+          <div class="field" style="animation-delay: 0.1s">
+            <label class="field-label" for="username">
+              <i class="fas fa-user"></i> Username
+            </label>
+            <div class="input-wrap">
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Masukkan username"
+                autocomplete="username"
+                required
+                spellcheck="false"
+              />
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="field" style="animation-delay: 0.2s">
+            <label class="field-label" for="password">
+              <i class="fas fa-lock"></i> Password
+            </label>
+            <div class="input-wrap">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Masukkan password"
+                autocomplete="current-password"
+                required
+              />
+              <button
+                type="button"
+                class="input-suffix"
+                id="togglePwd"
+                aria-label="Tampilkan password"
+              >
+                <i class="fas fa-eye" id="eyeIcon"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Extras -->
+          <div class="field-extras" style="animation-delay: 0.25s">
+            <label class="remember-label">
+              <input type="checkbox" id="rememberMe" name="rememberMe" />
+              <span>Ingat saya</span>
+            </label>
+            <a href="#" class="forgot-link">Lupa password?</a>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn-login" id="loginBtn">
+            <span class="btn-text">Masuk ke DailyFlow</span>
+            <i class="fas fa-arrow-right" id="btnIcon"></i>
+          </button>
+        </form>
+
+        <div class="login-footer">
+          Belum punya akun?
+          <a href="setup.php">Buat akun baru</a>
+        </div>
+      </div>
+      <!-- /login-left -->
+
+      <!-- RIGHT: Illustration Panel -->
+      <div class="login-right">
+        <div class="right-pattern"></div>
+
+        <div class="right-content">
+          <p class="right-eyebrow">All-in-one productivity</p>
+          <h2 class="right-headline">
+            Capai Potensi<br /><span>Terbaikmu</span><br />Setiap Hari
+          </h2>
+          <p class="right-desc">
+            Kelola waktu belajar, dengarkan musik fokus, rencanakan jadwal, dan
+            lacak tugas harianmu dalam satu platform.
+          </p>
+
+          <!-- Feature Pills -->
+          <div class="feature-pills">
+            <div class="feature-pill" style="animation-delay: 0.15s">
+              <div class="pill-icon purple">
+                <i class="fas fa-stopwatch"></i>
+              </div>
+              <div class="pill-text">
+                <h4>Stopwatch Belajar</h4>
+                <p>Lacak waktu belajar efektif & mode Pomodoro</p>
+              </div>
+            </div>
+            <div class="feature-pill" style="animation-delay: 0.25s">
+              <div class="pill-icon pink"><i class="fas fa-music"></i></div>
+              <div class="pill-text">
+                <h4>Musik Fokus</h4>
+                <p>Lo-fi, ambient & playlist belajar pilihan</p>
+              </div>
+            </div>
+            <div class="feature-pill" style="animation-delay: 0.35s">
+              <div class="pill-icon green">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <div class="pill-text">
+                <h4>Jadwal Cerdas</h4>
+                <p>Rekomendasi jadwal & teknik belajar efektif</p>
+              </div>
+            </div>
+            <div class="feature-pill" style="animation-delay: 0.45s">
+              <div class="pill-icon amber"><i class="fas fa-tasks"></i></div>
+              <div class="pill-text">
+                <h4>To-Do List</h4>
+                <p>Kelola tugas dengan prioritas & deadline</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative dots -->
+        <div class="dots-grid">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <!-- /login-right -->
+    </div>
+    <!-- /login-wrapper -->
+
+    <script src="js/auth.js"></script>
+  </body>
+</html>

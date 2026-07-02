@@ -1,0 +1,224 @@
+<!doctype html>
+<!-- FILE: music.html | Halaman Musik Fokus -->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DailyFlow — Musik Fokus</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/music.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav id="navbar"></nav>
+    <div class="mobile-nav" id="mobileNav"></div>
+
+    <main class="page-wrapper">
+      <!-- Header -->
+      <div class="page-header anim-fadeInDown">
+        <div class="page-header-row">
+          <a href="dashboard.html" class="btn-back"
+            ><i class="fas fa-arrow-left"></i
+          ></a>
+          <h1 class="page-title">🎵 Musik Fokus</h1>
+        </div>
+        <p class="page-subtitle">
+          Pilih playlist yang tepat untuk meningkatkan konsentrasi belajarmu.
+        </p>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="music-tabs anim-fadeInUp">
+        <button
+          class="music-tab active"
+          data-cat="fokus"
+          onclick="switchCategory('fokus')"
+        >
+          <span class="tab-dot"></span> 🧠 Fokus Belajar
+        </button>
+        <button
+          class="music-tab"
+          data-cat="santai"
+          onclick="switchCategory('santai')"
+        >
+          <span class="tab-dot"></span> 🌿 Santai & Rileks
+        </button>
+        <button
+          class="music-tab"
+          data-cat="energik"
+          onclick="switchCategory('energik')"
+        >
+          <span class="tab-dot"></span> ⚡ Semangat & Energik
+        </button>
+      </div>
+
+      <!-- Music Layout -->
+      <div class="music-layout">
+        <!-- LEFT: Player -->
+        <div>
+          <div class="player-card anim-scaleIn">
+            <!-- Album Art -->
+            <div class="album-art-wrap">
+              <div class="album-glow"></div>
+              <div class="album-art" id="albumArt">🎵</div>
+              <div class="album-art-center"></div>
+            </div>
+
+            <!-- Song Info -->
+            <div class="song-info">
+              <h3 class="song-title" id="songTitle">
+                Pilih lagu dari playlist
+              </h3>
+              <p class="song-artist" id="songArtist">—</p>
+              <span class="song-genre" id="songGenre">Lo-fi</span>
+            </div>
+
+            <!-- Equalizer -->
+            <div class="equalizer" id="equalizer">
+              <div class="eq-bar"></div>
+              <div class="eq-bar"></div>
+              <div class="eq-bar"></div>
+              <div class="eq-bar"></div>
+              <div class="eq-bar"></div>
+              <div class="eq-bar"></div>
+              <div class="eq-bar"></div>
+            </div>
+
+            <!-- Progress -->
+            <div class="progress-area">
+              <div class="progress-times">
+                <span id="currentTime">0:00</span>
+                <span id="totalTime">0:00</span>
+              </div>
+              <input
+                type="range"
+                class="progress-slider"
+                id="progressSlider"
+                min="0"
+                max="100"
+                value="0"
+                oninput="seekTo(this.value)"
+              />
+            </div>
+
+            <!-- Controls -->
+            <div class="music-controls">
+              <button
+                class="mc-btn mc-secondary"
+                id="shuffleBtn"
+                onclick="toggleShuffle()"
+                title="Acak"
+              >
+                <i class="fas fa-random"></i>
+              </button>
+              <button
+                class="mc-btn mc-prev"
+                onclick="prevSong()"
+                title="Sebelumnya"
+              >
+                <i class="fas fa-step-backward"></i>
+              </button>
+              <button
+                class="mc-btn mc-play"
+                id="playPauseBtn"
+                onclick="togglePlay()"
+              >
+                <i class="fas fa-play" id="playPauseIcon"></i>
+              </button>
+              <button
+                class="mc-btn mc-next"
+                onclick="nextSong()"
+                title="Selanjutnya"
+              >
+                <i class="fas fa-step-forward"></i>
+              </button>
+              <button
+                class="mc-btn mc-secondary"
+                id="repeatBtn"
+                onclick="toggleRepeat()"
+                title="Ulangi"
+              >
+                <i class="fas fa-redo"></i>
+              </button>
+            </div>
+
+            <!-- Volume -->
+            <div class="volume-row">
+              <i
+                class="fas fa-volume-down volume-icon"
+                onclick="toggleMute()"
+              ></i>
+              <input
+                type="range"
+                class="volume-slider"
+                id="volumeSlider"
+                min="0"
+                max="100"
+                value="70"
+                oninput="setVolume(this.value)"
+              />
+              <i class="fas fa-volume-up volume-icon"></i>
+            </div>
+          </div>
+          <!-- /player-card -->
+
+          <!-- Guide Banner -->
+          <div class="music-guide anim-fadeInUp d-300">
+            <h4>
+              <i class="fas fa-info-circle"></i> Cara Menambahkan Lagu Sendiri
+            </h4>
+            <ol>
+              <li>
+                Buat folder <code>audio/fokus/</code>,
+                <code>audio/santai/</code>, <code>audio/energik/</code>
+              </li>
+              <li>
+                Salin file <code>.mp3</code> atau <code>.ogg</code> ke folder
+                yang sesuai
+              </li>
+              <li>Buka file <code>js/music-config.js</code></li>
+              <li>
+                Tambahkan entri lagu di array <code>songs</code> sesuai kategori
+              </li>
+              <li>
+                Isi field: <code>title</code>, <code>artist</code>,
+                <code>src</code>, <code>emoji</code>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- RIGHT: Playlist -->
+        <div class="playlist-panel anim-fadeInRight">
+          <div class="playlist-head">
+            <span class="playlist-title" id="playlistTitle"
+              >🧠 Fokus Belajar</span
+            >
+            <span class="playlist-count" id="playlistCount">0 lagu</span>
+          </div>
+          <div class="playlist-scroll" id="playlistScroll">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+      </div>
+      <!-- /music-layout -->
+    </main>
+
+    <!-- Hidden Audio Element -->
+    <audio id="audioPlayer" preload="auto"></audio>
+
+    <!-- Toast Stack -->
+    <div class="toast-stack" id="toastStack"></div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/music-config.js"></script>
+    <script src="js/music.js"></script>
+  </body>
+</html>

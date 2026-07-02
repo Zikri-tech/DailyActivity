@@ -1,0 +1,168 @@
+<!doctype html>
+<!-- FILE: todo.html | Halaman To-Do List -->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DailyFlow — To-Do List</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/todo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav id="navbar"></nav>
+    <div class="mobile-nav" id="mobileNav"></div>
+
+    <main class="page-wrapper">
+      <!-- Header -->
+      <div class="page-header anim-fadeInDown">
+        <div class="page-header-row">
+          <a href="dashboard.html" class="btn-back"
+            ><i class="fas fa-arrow-left"></i
+          ></a>
+          <h1 class="page-title">✅ To-Do List</h1>
+        </div>
+        <p class="page-subtitle">
+          Kelola tugas harianmu dengan prioritas dan deadline yang jelas.
+        </p>
+      </div>
+
+      <div class="todo-layout">
+        <!-- LEFT: Add Task -->
+        <div class="add-task-card anim-fadeInLeft">
+          <h3 class="add-task-title">
+            <i class="fas fa-plus-circle"></i> Tambah Tugas
+          </h3>
+
+          <textarea
+            class="task-input"
+            id="taskInput"
+            placeholder="Apa yang perlu kamu kerjakan?&#10;Contoh: Buat laporan PKL..."
+            rows="3"
+          ></textarea>
+
+          <div class="priority-row">
+            <div class="priority-label">Prioritas:</div>
+            <div class="priority-btns">
+              <button
+                class="priority-btn low"
+                data-p="low"
+                onclick="setPriority('low')"
+              >
+                🟢 Rendah
+              </button>
+              <button
+                class="priority-btn medium active"
+                data-p="medium"
+                onclick="setPriority('medium')"
+              >
+                🟡 Sedang
+              </button>
+              <button
+                class="priority-btn high"
+                data-p="high"
+                onclick="setPriority('high')"
+              >
+                🔴 Tinggi
+              </button>
+            </div>
+          </div>
+
+          <div class="due-row">
+            <label>Deadline:</label>
+            <input type="date" id="dueInput" />
+          </div>
+
+          <button
+            class="btn btn-warning btn-lg"
+            style="width: 100%"
+            onclick="addTodo()"
+          >
+            <i class="fas fa-plus"></i> Tambahkan Tugas
+          </button>
+
+          <!-- Stats -->
+          <div class="todo-stats">
+            <div class="ts-item">
+              <div class="ts-val" id="statTotal">0</div>
+              <div class="ts-lbl">Total</div>
+            </div>
+            <div class="ts-item">
+              <div class="ts-val" style="color: #10b981" id="statDone">0</div>
+              <div class="ts-lbl">Selesai</div>
+            </div>
+            <div class="ts-item">
+              <div class="ts-val" style="color: #f59e0b" id="statPending">
+                0
+              </div>
+              <div class="ts-lbl">Tertunda</div>
+            </div>
+            <div class="ts-item">
+              <div class="ts-val" style="color: #ef4444" id="statOverdue">
+                0
+              </div>
+              <div class="ts-lbl">Terlambat</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: List -->
+        <div class="todo-list-panel anim-fadeInRight">
+          <div class="filter-tabs">
+            <button
+              class="filter-tab active"
+              data-f="all"
+              onclick="setFilter('all')"
+            >
+              Semua
+            </button>
+            <button
+              class="filter-tab"
+              data-f="today"
+              onclick="setFilter('today')"
+            >
+              Hari Ini
+            </button>
+            <button
+              class="filter-tab"
+              data-f="high"
+              onclick="setFilter('high')"
+            >
+              🔴 Prioritas Tinggi
+            </button>
+            <button
+              class="filter-tab"
+              data-f="done"
+              onclick="setFilter('done')"
+            >
+              ✅ Selesai
+            </button>
+            <button
+              class="filter-tab"
+              data-f="overdue"
+              onclick="setFilter('overdue')"
+            >
+              ⚠️ Terlambat
+            </button>
+          </div>
+          <div class="todo-list" id="todoList">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Toast Stack -->
+    <div class="toast-stack" id="toastStack"></div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/todo.js"></script>
+  </body>
+</html>

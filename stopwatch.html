@@ -1,0 +1,286 @@
+<!doctype html>
+<!-- FILE: stopwatch.html | Halaman Stopwatch -->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DailyFlow — Stopwatch Belajar</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏱️</text></svg>"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/stopwatch.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav id="navbar"></nav>
+    <div class="mobile-nav" id="mobileNav"></div>
+
+    <main class="page-wrapper">
+      <!-- Page Header -->
+      <div class="page-header anim-fadeInDown">
+        <div class="page-header-row">
+          <a href="dashboard.html" class="btn-back"
+            ><i class="fas fa-arrow-left"></i
+          ></a>
+          <h1 class="page-title">⏱️ Stopwatch Belajar</h1>
+        </div>
+        <p class="page-subtitle">
+          Lacak waktu belajar efektifmu. Mode Normal & Pomodoro tersedia.
+        </p>
+      </div>
+
+      <!-- Layout -->
+      <div class="stopwatch-layout">
+        <!-- LEFT: Timer Panel -->
+        <div class="timer-panel anim-scaleIn">
+          <!-- Mode Toggle -->
+          <div class="mode-toggle">
+            <button
+              class="mode-btn active"
+              id="modeNormal"
+              onclick="setMode('normal')"
+            >
+              <i class="fas fa-stopwatch"></i> Normal
+            </button>
+            <button
+              class="mode-btn"
+              id="modePomodoro"
+              onclick="setMode('pomodoro')"
+            >
+              🍅 Pomodoro 25/5
+            </button>
+            <button class="mode-btn" id="mode5010" onclick="setMode('5010')">
+              ⚡ 50/10
+            </button>
+          </div>
+
+          <!-- SVG Ring Timer -->
+          <div class="ring-wrap">
+            <svg class="ring-svg" viewBox="0 0 220 220">
+              <defs>
+                <linearGradient id="ringGradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#6C63FF" />
+                  <stop offset="100%" stop-color="#9C5CFF" />
+                </linearGradient>
+                <linearGradient
+                  id="ringGradientBreak"
+                  x1="0"
+                  y1="0"
+                  x2="1"
+                  y2="1"
+                >
+                  <stop offset="0%" stop-color="#10B981" />
+                  <stop offset="100%" stop-color="#34D399" />
+                </linearGradient>
+              </defs>
+              <circle class="ring-track" cx="110" cy="110" r="95" />
+              <circle
+                class="ring-progress"
+                id="ringProgress"
+                cx="110"
+                cy="110"
+                r="95"
+              />
+            </svg>
+
+            <div class="ring-inner">
+              <div class="timer-display" id="timerDisplay">00:00</div>
+              <div class="timer-label" id="timerLabel">SIAP</div>
+              <div
+                class="pomodoro-dots"
+                id="pomodoroDots"
+                style="display: none"
+              >
+                <div class="pomo-dot" data-n="0"></div>
+                <div class="pomo-dot" data-n="1"></div>
+                <div class="pomo-dot" data-n="2"></div>
+                <div class="pomo-dot" data-n="3"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="timer-controls">
+            <button
+              class="ctrl-btn ctrl-reset"
+              id="resetBtn"
+              onclick="resetTimer()"
+              title="Reset"
+            >
+              <i class="fas fa-redo"></i>
+            </button>
+            <button
+              class="ctrl-btn ctrl-play"
+              id="playBtn"
+              onclick="toggleTimer()"
+            >
+              <i class="fas fa-play" id="playIcon"></i>
+            </button>
+            <button
+              class="ctrl-btn ctrl-save"
+              id="saveBtn"
+              onclick="openSaveModal()"
+              disabled
+              title="Simpan sesi"
+            >
+              <i class="fas fa-save"></i>
+            </button>
+          </div>
+
+          <!-- Subject Row -->
+          <div class="subject-row">
+            <select id="subjectSelect">
+              <option value="Umum">📚 Umum</option>
+              <option value="Matematika">➗ Matematika</option>
+              <option value="Bahasa Indonesia">📝 Bahasa Indonesia</option>
+              <option value="Bahasa Inggris">🌍 Bahasa Inggris</option>
+              <option value="IPA">🔬 IPA / Sains</option>
+              <option value="IPS">🌐 IPS</option>
+              <option value="Pemrograman">💻 Pemrograman</option>
+              <option value="Data Science">📊 Data Science</option>
+              <option value="Jaringan Komputer">🌐 Jaringan Komputer</option>
+              <option value="Statistika">📈 Statistika</option>
+              <option value="Lainnya">📖 Lainnya</option>
+            </select>
+          </div>
+        </div>
+        <!-- /timer-panel -->
+
+        <!-- RIGHT: Log Panel -->
+        <div class="log-panel">
+          <!-- Today Stats -->
+          <div class="today-stats anim-fadeInRight">
+            <div class="today-stats-title">📊 Statistik Hari Ini</div>
+            <div class="today-stat-item">
+              <div class="today-stat-val" id="totalStudyToday">0m</div>
+              <div class="today-stat-lbl">Total Belajar</div>
+            </div>
+            <div class="today-stat-item">
+              <div class="today-stat-val" id="totalSessionsToday">0</div>
+              <div class="today-stat-lbl">Sesi Selesai</div>
+            </div>
+          </div>
+
+          <!-- Session Log -->
+          <div class="session-log-card anim-fadeInRight d-200">
+            <div class="log-header">
+              <h3 class="log-title">📋 Log Sesi Belajar</h3>
+              <button
+                class="btn btn-outline btn-sm"
+                onclick="clearAllSessions()"
+              >
+                <i class="fas fa-trash"></i> Hapus Semua
+              </button>
+            </div>
+            <div class="log-list" id="sessionLog">
+              <div class="empty-state">
+                <div class="empty-state-icon">⏰</div>
+                <h3>Belum ada sesi</h3>
+                <p>Mulai timer dan simpan sesimu untuk melihat log di sini.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /log-panel -->
+      </div>
+    </main>
+
+    <!-- Save Modal -->
+    <div class="modal-overlay" id="saveModal">
+      <div class="modal-box">
+        <div class="modal-head">
+          <h3 class="modal-title">💾 Simpan Sesi Belajar</h3>
+          <div class="modal-close" onclick="closeSaveModal()">
+            <i class="fas fa-times"></i>
+          </div>
+        </div>
+        <div style="margin-bottom: 16px">
+          <div style="display: flex; gap: 12px; margin-bottom: 14px">
+            <div style="flex: 1">
+              <label class="form-label">Mata Pelajaran</label>
+              <select id="saveSubject" class="form-control">
+                <option>Umum</option>
+                <option>Matematika</option>
+                <option>Bahasa Indonesia</option>
+                <option>Bahasa Inggris</option>
+                <option>IPA / Sains</option>
+                <option>Pemrograman</option>
+                <option>Data Science</option>
+                <option>Jaringan Komputer</option>
+                <option>Statistika</option>
+              </select>
+            </div>
+            <div style="flex: 0 0 auto">
+              <label class="form-label">Durasi</label>
+              <div
+                style="
+                  padding: 11px 14px;
+                  background: var(--primary-light);
+                  border-radius: 12px;
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-weight: 700;
+                  color: var(--primary);
+                "
+                id="saveDuration"
+              >
+                00:00
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Catatan (opsional)</label>
+            <textarea
+              class="form-control"
+              id="saveNotes"
+              placeholder="Apa yang kamu pelajari hari ini?"
+              style="resize: none; min-height: 70px"
+            ></textarea>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; justify-content: flex-end">
+          <button class="btn btn-outline" onclick="closeSaveModal()">
+            Batal
+          </button>
+          <button class="btn btn-primary" onclick="saveSession()">
+            <i class="fas fa-save"></i> Simpan
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Break Overlay -->
+    <div class="break-overlay" id="breakOverlay">
+      <div class="break-box">
+        <div class="break-emoji" id="breakEmoji">🎉</div>
+        <h2 class="break-title" id="breakTitle">Sesi Selesai!</h2>
+        <p class="break-desc" id="breakDesc">
+          Waktunya istirahat sejenak. Regangkan tubuhmu!
+        </p>
+        <div class="break-timer" id="breakTimer">05:00</div>
+        <div style="display: flex; gap: 10px; justify-content: center">
+          <button
+            class="btn btn-primary btn-lg"
+            onclick="startBreak()"
+            id="breakStartBtn"
+          >
+            <i class="fas fa-coffee"></i> Mulai Istirahat
+          </button>
+          <button class="btn btn-outline" onclick="skipBreak()">
+            <i class="fas fa-forward"></i> Lewati
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Stack -->
+    <div class="toast-stack" id="toastStack"></div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/stopwatch.js"></script>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<!-- FILE: dashboard.html | Halaman Dashboard -->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DailyFlow — Dashboard</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR (injected by nav.js) -->
+    <nav id="navbar"></nav>
+    <div class="mobile-nav" id="mobileNav"></div>
+
+    <!-- MAIN -->
+    <main class="page-wrapper">
+      <!-- Hero Greeting -->
+      <div class="hero-greeting anim-fadeInDown">
+        <div class="greeting-left">
+          <div class="greeting-label" id="greetingLabel">SELAMAT PAGI</div>
+          <h1 class="greeting-name" id="greetingName">Halo, Pengguna! 👋</h1>
+          <p class="greeting-sub" id="greetingQuote">
+            Yuk mulai hari ini dengan penuh semangat!
+          </p>
+        </div>
+        <div class="greeting-right">
+          <div class="hero-clock-big" id="heroClock">00:00:00</div>
+          <div class="hero-date-big" id="heroDate">Senin, 1 Januari 2025</div>
+        </div>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="stats-row">
+        <div class="stat-card anim-fadeInUp d-100">
+          <div class="stat-icon blue"><i class="fas fa-clock"></i></div>
+          <div class="stat-value" id="statStudyTime">0j</div>
+          <div class="stat-label">Belajar Hari Ini</div>
+        </div>
+        <div class="stat-card anim-fadeInUp d-200">
+          <div class="stat-icon pink"><i class="fas fa-music"></i></div>
+          <div class="stat-value" id="statSongPlayed">–</div>
+          <div class="stat-label">Lagu Terakhir</div>
+        </div>
+        <div class="stat-card anim-fadeInUp d-300">
+          <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+          <div class="stat-value" id="statTodoDone">0</div>
+          <div class="stat-label">Tugas Selesai</div>
+        </div>
+        <div class="stat-card anim-fadeInUp d-400">
+          <div class="stat-icon amber"><i class="fas fa-fire"></i></div>
+          <div class="stat-value" id="statStreak">1</div>
+          <div class="stat-label">Hari Berturut</div>
+        </div>
+      </div>
+
+      <!-- Feature Cards -->
+      <h2 class="section-heading anim-fadeInUp">🚀 Menu Utama</h2>
+      <div class="features-grid">
+        <a
+          href="stopwatch.html"
+          class="feature-card fc-stopwatch anim-fadeInUp d-100"
+        >
+          <div class="fc-icon-wrap">
+            <i class="fas fa-stopwatch"></i>
+          </div>
+          <h3 class="fc-title">Stopwatch Belajar</h3>
+          <p class="fc-desc">
+            Lacak waktu belajar efektif dengan timer dan mode Pomodoro (25/5
+            menit). Simpan log sesi belajarmu.
+          </p>
+          <div class="fc-arrow">
+            Mulai belajar <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+
+        <a href="music.html" class="feature-card fc-music anim-fadeInUp d-200">
+          <div class="fc-icon-wrap">
+            <i class="fas fa-headphones-alt"></i>
+          </div>
+          <h3 class="fc-title">Musik Fokus</h3>
+          <p class="fc-desc">
+            Pilih playlist musik: Lo-fi belajar, ambient santai, atau lagu
+            energik untuk semangat belajar.
+          </p>
+          <div class="fc-arrow">
+            Putar musik <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+
+        <a
+          href="schedule.html"
+          class="feature-card fc-schedule anim-fadeInUp d-300"
+        >
+          <div class="fc-icon-wrap">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3 class="fc-title">Jadwal Belajar</h3>
+          <p class="fc-desc">
+            Rekomendasi jadwal belajar efektif, teknik Pomodoro, Active Recall,
+            dan tips produktivitas.
+          </p>
+          <div class="fc-arrow">
+            Lihat jadwal <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+
+        <a href="todo.html" class="feature-card fc-todo anim-fadeInUp d-400">
+          <div class="fc-icon-wrap">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <h3 class="fc-title">To-Do List</h3>
+
+          <p class="fc-desc">
+            Buat daftar tugas harian dengan prioritas (Tinggi/Sedang/Rendah) dan
+            deadline. Tandai selesai!
+          </p>
+
+          <div class="fc-arrow">
+            Kelola tugas <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+        <div
+          class="feature-card fc-habit anim-fadeInUp d-500"
+          style="cursor: default"
+        >
+          <div class="fc-icon-wrap">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="fc-title">
+            Habit Tracker
+            <span
+              class="badge badge-info"
+              style="font-size: 10px; vertical-align: middle"
+              >Segera</span
+            >
+          </h3>
+          <p class="fc-desc">
+            Bangun kebiasaan positif: olahraga, baca buku, meditasi. Lihat
+            streak dan progress mingguan.
+          </p>
+          <div class="fc-arrow" style="opacity: 0.4">
+            Segera hadir <i class="fas fa-hourglass-half"></i>
+          </div>
+        </div>
+
+        <div
+          class="feature-card fc-water anim-fadeInUp d-600"
+          style="cursor: default"
+        >
+          <div class="fc-icon-wrap">
+            <i class="fas fa-tint"></i>
+          </div>
+          <h3 class="fc-title">Pengingat Minum</h3>
+          <p class="fc-desc">
+            Pantau asupan air harianmu. Target 8 gelas/hari. Hidrasimu = otakmu
+            bekerja lebih baik!
+          </p>
+          <div id="miniWater" style="margin-top: auto">
+            <div class="progress-track" style="height: 6px">
+              <div
+                class="progress-fill"
+                id="miniWaterFill"
+                style="
+                  background: linear-gradient(90deg, #06b6d4, #67e8f9);
+                  width: 0%;
+                "
+              ></div>
+            </div>
+            <div
+              style="font-size: 11px; color: var(--text-muted); margin-top: 4px"
+              id="miniWaterText"
+            >
+              0 / 8 gelas
+            </div>
+          </div>
+
+          <!-- Bottom Row -->
+        <div class="bottom-row">
+        <!-- Quote Card -->
+        <div class="quote-card anim-fadeInLeft d-200">
+            <i class="fas fa-sync-alt quote-refresh" id="quoteRefresh" title="Ganti quote"></i>
+                <p class="quote-text" id="quoteText">
+                "Belajar tanpa berpikir adalah sia-sia. Berpikir tanpa belajar adalah berbahaya."
+                </p>
+                <div class="quote-author" id="quoteAuthor">— Konfusius</div>
+            </div>
+        </div>
+      </div>
+    </main>
+    <!-- Toast Stack -->
+    <div class="toast-stack" id="toastStack"></div>
+    <script src="js/nav.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

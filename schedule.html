@@ -1,0 +1,327 @@
+<!doctype html>
+<!-- FILE: schedule.html | Halaman Jadwal Belajar -->
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DailyFlow — Jadwal Belajar</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/schedule.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav id="navbar"></nav>
+    <div class="mobile-nav" id="mobileNav"></div>
+
+    <main class="page-wrapper">
+      <!-- Header -->
+      <div class="page-header anim-fadeInDown">
+        <div class="page-header-row">
+          <a href="dashboard.html" class="btn-back"
+            ><i class="fas fa-arrow-left"></i
+          ></a>
+          <h1 class="page-title">📅 Jadwal & Teknik Belajar</h1>
+        </div>
+        <p class="page-subtitle">
+          Rekomendasi jadwal, teknik belajar efektif, dan tips produktivitas
+          untuk mahasiswa.
+        </p>
+      </div>
+
+      <!-- Technique Cards -->
+      <h2 class="section-heading anim-fadeInUp">🧠 Teknik Belajar Efektif</h2>
+      <div class="technique-cards">
+        <div class="tech-card anim-fadeInUp d-100">
+          <div class="tech-top">
+            <div class="tech-icon purple"><i class="fas fa-stopwatch"></i></div>
+            <div>
+              <div class="tech-name">Pomodoro</div>
+              <div class="tech-timing">25 menit kerja</div>
+            </div>
+          </div>
+          <p class="tech-desc">
+            Teknik paling populer untuk fokus. Bekerja selama 25 menit penuh,
+            istirahat 5 menit, ulangi 4 kali.
+          </p>
+          <div class="tech-steps">
+            <div class="tech-step">
+              <span class="step-num">1</span>Set timer 25 menit & mulai belajar
+            </div>
+            <div class="tech-step">
+              <span class="step-num">2</span>Istirahat 5 menit setelah sesi
+            </div>
+            <div class="tech-step">
+              <span class="step-num">3</span>Setelah 4 sesi, istirahat 15–30
+              menit
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-card anim-fadeInUp d-200">
+          <div class="tech-top">
+            <div class="tech-icon green"><i class="fas fa-brain"></i></div>
+            <div>
+              <div class="tech-name">Active Recall</div>
+              <div class="tech-timing">Uji diri sendiri</div>
+            </div>
+          </div>
+          <p class="tech-desc">
+            Daripada membaca ulang, uji dirimu dengan pertanyaan. Terbukti 2–3×
+            lebih efektif dari membaca biasa.
+          </p>
+          <div class="tech-steps">
+            <div class="tech-step">
+              <span class="step-num">1</span>Baca materi sekali dengan fokus
+            </div>
+            <div class="tech-step">
+              <span class="step-num">2</span>Tutup buku, jawab pertanyaan dari
+              memori
+            </div>
+            <div class="tech-step">
+              <span class="step-num">3</span>Periksa jawaban, ulangi yang salah
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-card anim-fadeInUp d-300">
+          <div class="tech-top">
+            <div class="tech-icon amber"><i class="fas fa-redo-alt"></i></div>
+            <div>
+              <div class="tech-name">Spaced Repetition</div>
+              <div class="tech-timing">Interval berulang</div>
+            </div>
+          </div>
+          <p class="tech-desc">
+            Ulangi materi pada interval yang meningkat: 1 hari, 3 hari, 1
+            minggu, 1 bulan. Efektif untuk memori jangka panjang.
+          </p>
+          <div class="tech-steps">
+            <div class="tech-step">
+              <span class="step-num">1</span>Pelajari materi baru hari ini
+            </div>
+            <div class="tech-step">
+              <span class="step-num">2</span>Ulangi besok, lusa, minggu depan
+            </div>
+            <div class="tech-step">
+              <span class="step-num">3</span>Gunakan kartu flash (flashcard)
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-card anim-fadeInUp d-400">
+          <div class="tech-top">
+            <div class="tech-icon blue"><i class="fas fa-pen-fancy"></i></div>
+            <div>
+              <div class="tech-name">Feynman Technique</div>
+              <div class="tech-timing">Ajarkan ulang</div>
+            </div>
+          </div>
+          <p class="tech-desc">
+            Jelaskan materi seolah kamu mengajari orang awam. Jika kamu tidak
+            bisa jelaskan sederhana, kamu belum paham.
+          </p>
+          <div class="tech-steps">
+            <div class="tech-step">
+              <span class="step-num">1</span>Pilih konsep yang ingin dipahami
+            </div>
+            <div class="tech-step">
+              <span class="step-num">2</span>Jelaskan dalam bahasa sederhana
+            </div>
+            <div class="tech-step">
+              <span class="step-num">3</span>Kembali ke materi untuk bagian yang
+              sulit
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-card anim-fadeInUp d-500">
+          <div class="tech-top">
+            <div class="tech-icon pink"><i class="fas fa-map"></i></div>
+            <div>
+              <div class="tech-name">Mind Mapping</div>
+              <div class="tech-timing">Visual thinking</div>
+            </div>
+          </div>
+          <p class="tech-desc">
+            Buat peta konsep dari materi. Cocok untuk materi yang luas dan
+            saling berkaitan antar topik.
+          </p>
+          <div class="tech-steps">
+            <div class="tech-step">
+              <span class="step-num">1</span>Tulis topik utama di tengah
+            </div>
+            <div class="tech-step">
+              <span class="step-num">2</span>Buat cabang subtopik
+            </div>
+            <div class="tech-step">
+              <span class="step-num">3</span>Gunakan warna & gambar
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schedule + Tips -->
+      <div class="schedule-layout">
+        <!-- Recommended Schedule -->
+        <div class="reco-schedule anim-fadeInLeft d-200">
+          <div class="print-btn-row">
+            <button class="btn btn-outline btn-sm" onclick="window.print()">
+              <i class="fas fa-print"></i> Cetak Jadwal
+            </button>
+          </div>
+          <div class="schedule-banner">
+            <i class="fas fa-star"></i>
+            <div class="schedule-banner-text">
+              <h4>Jadwal Belajar Optimal Mahasiswa</h4>
+              <p>
+                Berdasarkan penelitian produktivitas & ritme biologis manusia
+              </p>
+            </div>
+          </div>
+
+          <div class="schedule-timeline">
+            <div class="timeline-item">
+              <div class="tl-time">05:30</div>
+              <div class="tl-dot filled"></div>
+              <div class="tl-content">
+                <div class="tl-title">🌅 Bangun & Persiapan Pagi</div>
+                <div class="tl-desc">
+                  Sholat Subuh, olahraga ringan 15 menit, sarapan bergizi
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">07:00</div>
+              <div class="tl-dot filled"></div>
+              <div class="tl-content">
+                <div class="tl-title">📖 Sesi Belajar Pagi (Golden Hour)</div>
+                <div class="tl-desc">
+                  2–3 jam belajar materi baru. Otak paling segar di pagi hari!
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">10:00</div>
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-title">☕ Istirahat Aktif</div>
+                <div class="tl-desc">
+                  15–20 menit. Jalan kaki, peregangan, minum air putih
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">10:30</div>
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-title">📝 Sesi Latihan & Soal</div>
+                <div class="tl-desc">
+                  Kerjakan latihan soal dan review catatan dari sesi pagi
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">12:00</div>
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-title">🕐 Istirahat Siang</div>
+                <div class="tl-desc">
+                  Makan siang, sholat Dzuhur, tidur siang 20 menit (power nap)
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">13:30</div>
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-title">🔄 Review & Pengulangan</div>
+                <div class="tl-desc">
+                  Ulangi materi kemarin dengan metode Active Recall atau
+                  flashcard
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">15:00</div>
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-title">🤝 Belajar Kelompok / Diskusi</div>
+                <div class="tl-desc">
+                  Sesi diskusi, mengajarkan ke teman, atau forum online
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">16:30</div>
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-title">🏃 Aktivitas Fisik</div>
+                <div class="tl-desc">
+                  Olahraga 30 menit. Meningkatkan fokus dan suasana hati
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">19:30</div>
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-title">📚 Sesi Malam (Opsional)</div>
+                <div class="tl-desc">
+                  Baca ringan, buat rangkuman, atau persiapan hari esok
+                </div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-time">21:30</div>
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <div class="tl-title">🌙 Wind Down</div>
+                <div class="tl-desc">
+                  Matikan gadget, baca ringan, tidur pukul 22:00–22:30
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tips Accordion -->
+        <div class="tips-card anim-fadeInRight d-300">
+          <h3 class="card-title" style="margin-bottom: 20px">
+            <i
+              class="fas fa-lightbulb"
+              style="
+                background: rgba(245, 158, 11, 0.12);
+                color: #f59e0b;
+                width: 34px;
+                height: 34px;
+                border-radius: 9px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 15px;
+              "
+            ></i>
+            Tips Produktivitas
+          </h3>
+
+          <div id="tipsContainer">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Toast Stack -->
+    <div class="toast-stack" id="toastStack"></div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/schedule.js"></script>
+  </body>
+</html>

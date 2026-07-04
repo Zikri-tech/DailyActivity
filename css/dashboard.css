@@ -1,8 +1,7 @@
-/* ================================================
-   FILE: css/dashboard.css  — Dashboard
-   ================================================ */
+/* Dashboard
+   ======================================*/
 
-/* ── Hero Greeting ─────────────────────────────── */
+/* Hero Greeting */
 .hero-greeting {
   border-radius: var(--r-2xl);
   padding: 36px 40px;
@@ -99,7 +98,7 @@
   opacity: 0.72;
 }
 
-/* ── Stats Row ─────────────────────────────────── */
+/* Stats Row */
 .stats-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -164,7 +163,7 @@
   font-weight: 500;
 }
 
-/* ── Feature Cards Grid ─────────────────────────── */
+/* Feature Cards Grid */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -290,7 +289,7 @@
   gap: 10px;
 }
 
-/* ── Bottom Row ────────────────────────────────── */
+/* Bottom Row */
 .bottom-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -405,7 +404,7 @@
   color: var(--t3);
 }
 
-/* ── Responsive ──────────────────────────────── */
+/* Responsive */
 @media (max-width: 1024px) {
   .stats-row {
     grid-template-columns: repeat(2, 1fr);

@@ -317,7 +317,7 @@ function onSongEnd() {
   nextSong();
 }
 
-/* ── Shuffle & Repeat ───────────────────────────── */
+/* Shuffle & Repeat */
 function toggleShuffle() {
   isShuffle = !isShuffle;
   document.getElementById("shuffleBtn")?.classList.toggle("active", isShuffle);
@@ -338,7 +338,7 @@ function toggleRepeat() {
   );
 }
 
-/* ── Progress Bar ───────────────────────────────── */
+/* Progress Bar */
 function updateProgress() {
   if (!audio || !audio.duration || audio.duration === 0) return;
   const pct = (audio.currentTime / audio.duration) * 100;
@@ -354,7 +354,7 @@ function seekTo(val) {
   }
 }
 
-/* ── Volume ─────────────────────────────────────── */
+/* Volume */
 function setVolume(val) {
   if (audio) audio.volume = val / 100;
   saveMusicState();
@@ -369,7 +369,7 @@ function toggleMute() {
   });
 }
 
-/* ── Helpers ────────────────────────────────────── */
+/* Helpers */
 function formatAudioTime(sec) {
   if (!sec || isNaN(sec)) return "0:00";
   const m = Math.floor(sec / 60);

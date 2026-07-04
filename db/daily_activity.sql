@@ -1,12 +1,5 @@
 -- DailyFlow - Database
 
-DROP DATABASE IF EXISTS `daily_activity`;
-CREATE DATABASE `daily_activity`
-  DEFAULT CHARACTER SET utf8mb4
-  DEFAULT COLLATE utf8mb4_unicode_ci;
-
-USE `daily_activity`;
-
 -- TABLE: user
 CREATE TABLE `users` (
   `id`          INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,

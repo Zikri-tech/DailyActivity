@@ -1,9 +1,8 @@
-/* ================================================
-   FILE: css/login.css  — Halaman Login
-   ================================================ */
+/* Halaman Login
+   =============== */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap");
 
-/* ── Tokens ────────────────────────────────────── */
+/* Tokens */
 :root {
   --pri: #6c63ff;
   --pri-dk: #5248d4;
@@ -39,7 +38,7 @@ body {
   overflow: hidden;
 }
 
-/* ── Animated blobs ────────────────────────────── */
+/* Animated blobs */
 .bg-gradient {
   position: fixed;
   inset: 0;
@@ -157,9 +156,8 @@ body {
   animation: floatUp linear infinite;
 }
 
-/* ══════════════════════════════════════════════════
-   LOGIN WRAPPER — split layout
-   ══════════════════════════════════════════════════ */
+/* LOGIN WRAPPER — split layout
+   ══════════════════════════════ */
 .login-wrapper {
   position: relative;
   z-index: 10;
@@ -173,9 +171,8 @@ body {
   animation: fadeU 0.6s ease both;
 }
 
-/* ══════════════════════════════════════════════════
-   LEFT — Form Panel
-   ══════════════════════════════════════════════════ */
+/* LEFT — Form Panel
+   ═══════════════════*/
 .login-left {
   flex: 1;
   background: var(--surface);
@@ -430,9 +427,8 @@ body {
   text-decoration: underline;
 }
 
-/* ══════════════════════════════════════════════════
-   RIGHT — Illustration Panel
-   ══════════════════════════════════════════════════ */
+/* RIGHT — Illustration Panel
+   ═══════════════════════════ */
 .login-right {
   flex: 1;
   background: linear-gradient(145deg, #150f55 0%, #251a75 50%, #0c0831 100%);
@@ -578,7 +574,7 @@ body {
   color: rgba(255, 255, 255, 0.48);
 }
 
-/* ── Responsive ──────────────────────────────── */
+/* Responsive*/
 @media (max-width: 820px) {
   body {
     align-items: flex-start;

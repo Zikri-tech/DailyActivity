@@ -345,7 +345,7 @@ function setTxt(id, val) {
   if (el) el.textContent = val;
 }
 
-/* ── Helpers ────────────────────────────────────── */
+/* Helpers */
 function getDueLabel(dueDate) {
   if (!dueDate) return '';
   const today = new Date(); today.setHours(0, 0, 0, 0);

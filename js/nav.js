@@ -211,13 +211,13 @@ function checkSession() {
     });
 }
 
-/* ── Logout ─────────────────────────────────────── */
+/*  Logout */
 function doLogout() {
   clearLocalUser();
   location.href = "logout.php";
 }
 
-/* ── localStorage helpers ───────────────────────── */
+/* localStorage helpers */
 function saveLocalUser(u) {
   localStorage.setItem("dailyflow_user", JSON.stringify(u));
 }
@@ -232,7 +232,7 @@ function clearLocalUser() {
   localStorage.removeItem("dailyflow_user");
 }
 
-/* ── Global Toast (available to all pages) ───────── */
+/* Global Toast */
 window.showToast = function (msg, type = "success", ms = 3200) {
   let stack = document.getElementById("toastStack");
   if (!stack) {

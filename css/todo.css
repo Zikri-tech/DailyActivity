@@ -1,9 +1,7 @@
-/* ================================================
-   FILE: css/todo.css
-   To-Do List + Fitur Edit Deskripsi
-   ================================================ */
+/* To-Do List dengan Fitur CRUD
+   ===================================*/
 
-/* ── Layout Utama ────────────────────────────────── */
+/* Layout Utama */
 .todo-layout {
   display: grid;
   grid-template-columns: 340px 1fr;
@@ -11,9 +9,8 @@
   align-items: start;
 }
 
-/* ══════════════════════════════════════════════════
-   PANEL KIRI — Form Tambah Tugas
-   ══════════════════════════════════════════════════ */
+/* PANEL KIRI — Form Tambah Tugas
+   ═══════════════════════════════ */
 .add-task-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -189,9 +186,8 @@
   font-weight: 500;
 }
 
-/* ══════════════════════════════════════════════════
-   PANEL KANAN — Daftar Tugas
-   ══════════════════════════════════════════════════ */
+/* PANEL KANAN — Daftar Tugas
+   ════════════════════════════ */
 .todo-list-panel {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -242,9 +238,8 @@
   min-height: 200px;
 }
 
-/* ══════════════════════════════════════════════════
-   TODO ITEM — Normal Mode
-   ══════════════════════════════════════════════════ */
+/* TODO ITEM — Normal Mode
+   ═════════════════════════ */
 .todo-item {
   display: flex;
   align-items: flex-start;
@@ -396,9 +391,8 @@
   transform: scale(1.1);
 }
 
-/* ══════════════════════════════════════════════════
-   TODO ITEM — Edit Mode
-   ══════════════════════════════════════════════════ */
+/* TODO ITEM — Edit Mode
+   ═══════════════════════ */
 .todo-item.editing {
   background: var(--surface);
   border-color: var(--primary) !important;
@@ -537,9 +531,8 @@
   font-style: italic;
 }
 
-/* ══════════════════════════════════════════════════
-   RESPONSIVE
-   ══════════════════════════════════════════════════ */
+/* RESPONSIVE
+   ════════════ */
 @media (max-width: 900px) {
   .todo-layout {
     grid-template-columns: 1fr;

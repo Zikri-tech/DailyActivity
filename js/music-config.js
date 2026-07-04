@@ -1,35 +1,5 @@
-// FILE: js/music-config.js
-// ╔══════════════════════════════════════════════╗
-// ║         CARA MENAMBAHKAN LAGU                ║
-// ╠══════════════════════════════════════════════╣
-// ║ 1. Buat folder audio/ di root project:       ║
-// ║    daily-activity/                           ║
-// ║    └── audio/                                ║
-// ║        ├── fokus/                            ║
-// ║        │   ├── lofi-study-1.mp3             ║
-// ║        │   └── lofi-study-2.mp3             ║
-// ║        ├── santai/                           ║
-// ║        │   └── ambient-rain.mp3             ║
-// ║        └── energik/                          ║
-// ║            └── upbeat-study.mp3             ║
-// ║                                              ║
-// ║ 2. Tambahkan entri baru di bawah (songs[]):  ║
-// ║    {                                         ║
-// ║      title:   "Nama Lagu",                   ║
-// ║      artist:  "Nama Artis",                  ║
-// ║      src:     "audio/fokus/nama-file.mp3",   ║
-// ║      emoji:   "🎵",  // ikon album art       ║
-// ║      duration:"3:45" // perkiraan durasi     ║
-// ║    }                                         ║
-// ║                                              ║
-// ║ 3. Sumber lagu bebas copyright:              ║
-// ║    - https://www.looperman.com               ║
-// ║    - https://freemusicarchive.org            ║
-// ║    - https://incompetech.com                 ║
-// ║    - YouTube Audio Library                   ║
-// ║    - Lagu lo-fi bebas copyright              ║
-// ╚══════════════════════════════════════════════╝
-
+// Music Playlist
+// ================
 const MUSIC_CONFIG = {
   categories: [
     {

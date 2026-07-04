@@ -1,7 +1,5 @@
-// ================================================
-// FILE: js/auth.js
 // Logic halaman login
-// ================================================
+// ====================
 
 document.addEventListener("DOMContentLoaded", () => {
   // Generate particles

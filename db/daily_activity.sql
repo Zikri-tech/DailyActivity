@@ -1,7 +1,4 @@
--- ================================================
--- FILE: db/daily_activity.sql
--- DailyFlow - Sistem Database
--- ================================================
+-- DailyFlow - Database
 
 DROP DATABASE IF EXISTS `daily_activity`;
 CREATE DATABASE `daily_activity`
@@ -10,9 +7,7 @@ CREATE DATABASE `daily_activity`
 
 USE `daily_activity`;
 
--- ============================================
--- TABLE: users
--- ============================================
+-- TABLE: user
 CREATE TABLE `users` (
   `id`          INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   `username`    VARCHAR(50)   NOT NULL UNIQUE,
@@ -23,9 +18,7 @@ CREATE TABLE `users` (
   `last_login`  TIMESTAMP     NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ============================================
 -- TABLE: study_sessions (dari Stopwatch)
--- ============================================
 CREATE TABLE `study_sessions` (
   `id`           INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   `user_id`      INT UNSIGNED NOT NULL,
@@ -37,9 +30,7 @@ CREATE TABLE `study_sessions` (
   FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- ============================================
 -- TABLE: todos
--- ============================================
 CREATE TABLE `todos` (
   `id`         INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   `user_id`    INT UNSIGNED NOT NULL,
@@ -50,9 +41,3 @@ CREATE TABLE `todos` (
   `created_at` TIMESTAMP    DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ============================================
--- CATATAN:
--- Akun dibuat melalui setup.php, bukan lewat SQL,
--- agar password ter-hash dengan aman (bcrypt).
--- ============================================

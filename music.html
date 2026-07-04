@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DailyFlow — Musik Fokus</title>
+    <title>DailyFlow — Playlist Musik</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>"
@@ -27,36 +27,16 @@
           <a href="dashboard.html" class="btn-back"
             ><i class="fas fa-arrow-left"></i
           ></a>
-          <h1 class="page-title">🎵 Musik Fokus</h1>
+          <h1 class="page-title">🎵 Playlist Musik</h1>
         </div>
         <p class="page-subtitle">
           Pilih playlist yang tepat untuk meningkatkan konsentrasi belajarmu.
         </p>
       </div>
 
-      <!-- Category Tabs -->
-      <div class="music-tabs anim-fadeInUp">
-        <button
-          class="music-tab active"
-          data-cat="fokus"
-          onclick="switchCategory('fokus')"
-        >
-          <span class="tab-dot"></span> 🧠 Fokus Belajar
-        </button>
-        <button
-          class="music-tab"
-          data-cat="santai"
-          onclick="switchCategory('santai')"
-        >
-          <span class="tab-dot"></span> 🌿 Santai & Rileks
-        </button>
-        <button
-          class="music-tab"
-          data-cat="energik"
-          onclick="switchCategory('energik')"
-        >
-          <span class="tab-dot"></span> ⚡ Semangat & Energik
-        </button>
+      <!-- Category Tabs — di-generate otomatis dari music-config.js -->
+      <div class="music-tabs anim-fadeInUp" id="musicTabs">
+        <!-- Otomatis terisi dari music-config.js via renderTabs() -->
       </div>
 
       <!-- Music Layout -->

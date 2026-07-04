@@ -1,6 +1,5 @@
-/* ================================================
-   FILE: css/music.css
-   ================================================ */
+/* FILE: css/music.css */
+/* =======================  */
 
 .music-layout {
   display: grid;
@@ -9,7 +8,7 @@
   align-items: start;
 }
 
-/* ── Category Tabs ───────────────────────────── */
+/* Category Tabs */
 .music-tabs {
   display: flex;
   gap: 8px;
